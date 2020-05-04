@@ -1,0 +1,62 @@
+# [Created by task 2.5.1 4/29/2020 22:46:37]
+# Taskwarrior program configuration file.
+# For more documentation, see http://taskwarrior.org or try 'man task', 'man task-color',
+# 'man task-sync' or 'man taskrc'
+
+# Here is an example of entries that use the default, override and blank values
+#   variable=foo   -- By specifying a value, this overrides the default
+#   variable=      -- By specifying no value, this means no default
+#   #variable=foo  -- By commenting out the line, or deleting it, this uses the default
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+# Color theme (uncomment one to use)
+#include /usr/share/taskwarrior/light-16.theme
+#include /usr/share/taskwarrior/light-256.theme
+#include /usr/share/taskwarrior/dark-16.theme
+#include /usr/share/taskwarrior/dark-256.theme
+#include /usr/share/taskwarrior/dark-red-256.theme
+#include /usr/share/taskwarrior/dark-green-256.theme
+#include /usr/share/taskwarrior/dark-blue-256.theme
+#include /usr/share/taskwarrior/dark-violets-256.theme
+#include /usr/share/taskwarrior/dark-yellow-green.theme
+#include /usr/share/taskwarrior/dark-gray-256.theme
+#include /usr/share/taskwarrior/dark-gray-blue-256.theme
+#include /usr/share/taskwarrior/solarized-dark-256.theme
+#include /usr/share/taskwarrior/solarized-light-256.theme
+#include /usr/share/taskwarrior/no-color.theme
+
+taskd.certificate=private.cert
+taskd.key=private.key
+taskd.ca=ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/yaohunzhanyue/41c7ffbb-990a-4f64-9bdd-1fca7382a7c0
+taskd.trust=ignore hostname
+
+uda.intheamattachments.type=string
+uda.intheamattachments.label=Inthe.AM Attachments
+uda.intheamoriginalemailsubject.type=string
+uda.intheamoriginalemailsubject.label=Inthe.AM E-mail Subject
+uda.intheamoriginalemailid.type=numeric
+uda.intheamoriginalemailid.label=Inthe.AM E-mail ID
+uda.intheamtrelloid.type=string
+uda.intheamtrelloid.label=Inthe.AM Trello Object ID
+uda.intheamtrelloboardid.type=string
+uda.intheamtrelloboardid.label=Inthe.AM Trello Board ID
+uda.intheamtrellolistid.type=string
+uda.intheamtrellolistid.label=Inthe.AM Trello List ID
+uda.intheamtrellolistname.type=string
+uda.intheamtrellolistname.label=Inthe.AM Trello List Name
+uda.intheamtrellourl.type=string
+uda.intheamtrellourl.label=Inthe.AM Trello URL
+uda.intheamtrellodescription.type=string
+uda.intheamtrellodescription.label=Inthe.AM Trello Description
+uda.intheamtrellolastupdated.type=string
+uda.intheamtrellolastupdated.label=Inthe.AM Trello Last Updated
+uda.intheamduplicateof.type=string
+uda.intheamduplicateof.label=Inthe.AM Duplicate of Task
+uda.intheammergedfrom.type=string
+uda.intheammergedfrom.label=Inthe.AM Duplicate Tasks Merged
