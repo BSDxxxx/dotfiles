@@ -195,4 +195,5 @@ alias la='ls -a --color'
 alias ll='ls -l --color'
 alias ra='ranger'
 alias s='neofetch'
+alias c='chezmoi'
 zsh

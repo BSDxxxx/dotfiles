@@ -102,12 +102,14 @@ source $ZSH/oh-my-zsh.sh
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export LS_COLORS='di=1:fi=0:ln=31:pi=5:so=5:bd=5:cd=5:or=31:mi=0:ex=35:*.rpm=90'
+export MYVIMRC=~/.vim/vimrc
 alias vi='vim'
 alias ls='ls --color'
 alias la='ls -a --color'
 alias ll='ls -l --color'
 alias ra='ranger'
 alias s='neofetch'
+alias c='chezmoi'
 
 
 # Key bindings
