@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='f:/ProgramFiles/GitHub/config_files_backup_repo/nvim'
+let g:netrw_dirhist_9='f:/ProgramFiles/GitHub/config_files_backup_repo'
+let g:netrw_dirhist_8='f:/ProgramFiles/GitHub/config_files_backup_repo/nvim'
+let g:netrw_dirhist_7='f:/ProgramFiles/GitHub/config_files_backup_repo'
+let g:netrw_dirhist_6='f:/ProgramFiles/GitHub/config_files_backup_repo/nvim'
+let g:netrw_dirhist_5='f:/ProgramFiles/GitHub/config_files_backup_repo'
+let g:netrw_dirhist_4='f:/ProgramFiles/GitHub/config_files_backup_repo/TeXmacs'
+let g:netrw_dirhist_3='f:/ProgramFiles/GitHub/config_files_backup_repo'
+let g:netrw_dirhist_2='f:/ProgramFiles/GitHub/config_files_backup_repo/TeXmacs'
+let g:netrw_dirhist_1='f:/ProgramFiles/GitHub/config_files_backup_repo'

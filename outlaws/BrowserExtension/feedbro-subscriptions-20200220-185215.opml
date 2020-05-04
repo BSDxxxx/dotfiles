@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+<head>
+<title>Feed Subscriptions</title>
+</head>
+<body>
+      <outline text="反斗限免 » Feed" title="反斗限免 » Feed" type="rss" 
+            xmlUrl="http://free.apprcn.com/feed/" htmlUrl="http://free.apprcn.com"/>
+      <outline text="编程随想的博客" title="编程随想的博客" type="rss" 
+            xmlUrl="https://feeds2.feedburner.com/programthink" htmlUrl="https://program-think.blogspot.com/"/>
+      <outline text="AppSales" title="AppSales" type="rss" 
+            xmlUrl="https://feed43.com/appsales-free.xml" htmlUrl="https://www.feed43.com/"/>
+      <outline text="Unread notifications for yongshidadi" title="Unread notifications for yongshidadi" type="rss" 
+            xmlUrl="https://www.v2ex.com/n/0677fba9e5f2acd0a9ca02b62ccdc22332ff15cc.xml" htmlUrl="https://www.v2ex.com/notifications"/>
+      <outline text="App Shopper - IOS Apps" title="App Shopper - IOS Apps" type="rss" 
+            xmlUrl="https://feed43.com/app-shopper.xml" htmlUrl="https://appshopper.com/"/>
+      <outline text="AppShopper.com: All Price Drops for iOS" title="AppShopper.com: All Price Drops for iOS" type="rss" 
+            xmlUrl="https://appshopper.com/feed/?platform=ios&amp;device=&amp;mode=all&amp;filter=price&amp;type=&amp;category=" htmlUrl="http://appshopper.com"/>
+</body>
+</opml>

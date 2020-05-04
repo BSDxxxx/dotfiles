@@ -1,0 +1,42 @@
+# hosts -> dnsmaq: %s/\v^(#*\s*)(\S+)\s+(\S+)\s*/\1address=\/\3\/\2/g
+# dnsmap -> hosts: %s/\vaddress\=\/(\S+)\/(\S+)\s*/\2 \1/g
+
+#127.0.0.1 bilibili.com
+#127.0.0.1 www.bilibili.com
+#127.0.0.1 pianku.com
+#127.0.0.1 www.pianku.com
+104.18.18.18 free-ss.site
+
+# Anki 加速
+#88.198.11.78 ankiweb.net
+#88.198.11.78 msync.ankiweb.net
+#116.202.51.32 ankiweb.net
+#116.202.51.32 msync.ankiweb.net
+
+# 放牧的风
+104.31.74.55 youneed.win
+104.31.74.54 www.youneed.win
+
+# keep
+127.0.0.1 pic.fancyapi.com
+
+# 屏蔽 js 劫持广告
+127.0.0.1 ad.lflucky.com
+127.0.0.1 sf3-ttcdn-tos.pstatp.com
+127.0.0.1 sf1-ttcdn-tos.pstatp.com
+
+# 广告联盟
+127.0.0.1 pgdt.ugdtimg.com
+127.0.0.1 ulogs.umeng.com
+127.0.0.1 plbslog.umeng.com
+
+# Google Adds
+127.0.0.1 adservice.google.com
+127.0.0.1 pagead2.googlesyndication.com
+127.0.0.1 pagead2.googleadservices.com
+127.0.0.1 tpc.googlesyndication.com
+127.0.0.1 fonts.googleapis.com
+127.0.0.1 www.gstatic.com
+127.0.0.1 imasdk.googleapis.com
+127.0.0.1 www.google-analytics.com
+127.0.0.1 google-analytics.com

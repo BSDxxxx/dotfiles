@@ -1,0 +1,32 @@
+# Insert your preferred key mappings here.
+map K scrollPageUp
+map J scrollPageDown
+map H goBack
+map L goForward
+map <c-h> previousTab
+map <c-l> nextTab
+map o Vomnibar.activateInNewTab
+map O Vomnibar.activate
+map d removeTab
+map u restoreTab
+map s Vomnibar.activateTabSelection
+map p openCopiedUrlInNewTab
+map P openCopiedUrlInCurrentTab
+map b Vomnibar.activateBookmarksInNewTab
+map B Vomnibar.activateBookmarks
+map f LinkHints.activateModeToOpenInNewTab
+map F LinkHints.activateMode
+map t Vomnibar.activateEditUrlInNewTab
+map T Vomnibar.activateEditUrl
+
+unmap x
+unmap X
+unmap gt
+unmap gT
+unmap ge
+unmap gE
+unmap zH
+unmap zL
+unmap <c-e>
+unmap <c-y>
+unmap <c-f>

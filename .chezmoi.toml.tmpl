@@ -1,0 +1,12 @@
+{{ if ne .chezmoi.os "windows" }}
+sourceDir = "F:/ProgramFiles/GitHub/dotfiles"
+{{ end }}
+
+[data]
+	[data.github]
+		user = "<github-username>"
+		token = "<github-token>"
+
+[gpg]
+	symmetric = false
+	recipient = "yaohunzhanyue"

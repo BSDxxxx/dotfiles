@@ -1,0 +1,10 @@
+sourceDir = "F:/ProgramFiles/GitHub/dotfiles"
+
+[data]
+	[data.github]
+		user = "<github-username>"
+		token = "<github-token>"
+
+[gpg]
+	symmetric = false
+	recipient = "yaohunzhanyue"

@@ -1,0 +1,19 @@
+snippet box "box" b
+`!p snip.rv = '┌' + '─' * (len(t[1]) + 2) + '┐'`
+│ $1 │
+`!p snip.rv = '└' + '─' * (len(t[1]) + 2) + '┘'`
+$0
+endsnippet
+
+snippet box "box2" b
+`!p snip.rv = '"' + '"' * (len(t[1]) + 2) + '"'`
+" $1 "
+`!p snip.rv = '"' + '"' * (len(t[1]) + 2) + '"'`
+$0
+endsnippet
+
+snippet box "box3" b
+`!p snip.rv = '" ==' + '=' * (len(t[1]) + 2) + '===='`
+" === $1 ===
+`!p snip.rv = '" ==' + '=' * (len(t[1]) + 2) + '===='`
+endsnippet
