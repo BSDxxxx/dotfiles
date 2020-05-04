@@ -43,6 +43,20 @@ set updatecount=400 "swapfile保存触发，默认200字符，设为0将不保�
 set linespace=4
 
 
+" =======================
+" === Dress Up My Vim ===
+" =======================
+set termguicolors " enable true colors support
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+"let ayucolor='mirage'
+"let g:oceanic_next_terminal_bold = 1
+"let g:oceanic_next_terminal_italic = 1
+"let g:one_allow_italics = 1
+
+highlight NonText ctermfg=gray guifg=grey10
+"highlight SpecialKey ctermfg=blue guifg=grey70
+
+
 " =============
 " === netrw ===
 " =============
@@ -56,8 +70,8 @@ let g:netrw_winsize = 10
 autocmd VimEnter * :Vexplore
 autocmd VimEnter * wincmd l
 aug netrw_close
-  au!
-  au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), '&filetype') == 'netrw'|q|endif
+	au!
+	au WinEnter * if winnr('$') == 1 && getbufvar(winbufnr(winnr()), '&filetype') == 'netrw'|q|endif
 aug END
 
 
@@ -67,50 +81,53 @@ aug END
 set relativenumber "相对行号
 "noremap <F2> :set rnu!<CR>
 
-"自动注释、缩进，会导致i模式下ctrl键无效，而且会导致一些插件无法正常工作
+" 自动注释、缩进，会导致i模式下ctrl键无效，而且会导致一些插件无法正常工作
 "set paste
 set pastetoggle=<F1>
 
-"英文拼写检查,相关指令见:help spell
+" 英文拼写检查,相关指令见:help spell
 nnoremap <F2> :set spell! spell?<CR>
 inoremap <F2> <ESC>:set spell! spell?<CR>a
-noremap <C-x> ea<C-x>s
-inoremap <C-x> <Esc>ea<C-x>s
+nnoremap <C-Tab> geea<C-x>s
+inoremap <C-Tab> <Esc>geea<C-x>s
 
-"浏览时根据窗口大小自动换行
+" 浏览时根据窗口大小自动换行
 set wrap
 "noremap <F5> :set wrap! wrap?<CR>
-"写入自动换行,0代表不换行
-set textwidth=0
+set textwidth=0 "写入模式自动换行,0代表不自动换行
 
 set list "显示制表符和空格
 "noremap <F6> :set list! list?<CR>
 set listchars=tab:▶\ ,trail:□
+"set expandtab "tab转空格
+"set softtabstop=2 "配合expandtab，在空格和tab混用时，将多少个空格识别为tab
+set tabstop=4 "调整tab的宽度等于几个空格
+set shiftwidth=4 "键入tab时生成tab的个数(shiftwidth/tabstop)，不足1个用空格代替，同时也控制<<, >>, ==的缩进距离
 
 syntax on
 set scrolloff=5 "保证光标上/下方至少有5行可见
-"Highlight cursorline
+" Highlight cursorline
 set cursorline
 exec 'highlight CursorLine   cterm=NONE ctermbg=lightgray ctermfg=lightblue guibg=NONE guifg=NONE'
-"Highlight cursorcolumn
+" Highlight cursorcolumn
 "set cursorcolumn
 "exec 'highlight CursorColumn cterm=NONE ctermbg=black ctermfg=green guibg=NONE guifg=NONE'
 
-"Cursor color
+" Cursor color
 "exec 'highlight Cursor guifg=white guibg=black'
 "exec 'highlight iCursor guifg=white guibg=steelblue'
 
-"普通模式和写入模式显示不同样式的光标
-"第一种实现方式(无效请尝试另一种)
+" 普通模式和写入模式显示不同样式的光标
+" 第一种实现方式(无效请尝试另一种)
 let &t_SI.="\e[5 q" "SI = INSERT mode
 let &t_SR.="\e[4 q" "SR = REPLACE mode
 let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
-"第二种实现方式
+" 第二种实现方式
 "let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 "let &t_SR = "\<Esc>]50;CursorShape=2\x7"
 "let &t_EI = "\<Esc>]50;CursorShape=0\x7"
 
-"自动缩进
+" 自动缩进
 "set cindent "采用C语言的标准缩进方式
 "set autoindent "新增加的行和前一行具有相同的缩进形式
 set smartindent "autoindent的升级版
@@ -132,111 +149,117 @@ set lazyredraw "same as above
 
 set visualbell
 
-
 "set colorcolumn=80 "高亮第80列（一行代码最好不超过79个字）
 set virtualedit=block
 
-"空格替代tab
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-
 set indentexpr=
 set backspace=indent,eol,start
-set foldmethod=indent
-set foldlevel=99
-set foldenable
 
-"Status/command bar
+" Status/command bar
 set laststatus=2
 set formatoptions-=tc
 
-"Restore Cursor Position
-"autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe normal! g'\"" | endif
-"Restore Cursor Position(another way)
-autocmd BufReadPost * normal! g`"
+" Restore Cursor Position
+autocmd BufReadPost * if line("'\"") > 1 && line("'\"") <= line('$') | exe "normal! g'\"" | endif
 
 
 " =======================
 " === Leader Mappings ===
 " =======================
 let mapleader=' '
-"delete hilight search results
-noremap <silent> <LEADER><CR> :nohlsearch<CR>
+nnoremap <silent> <LEADER><CR> :nohlsearch<CR>
 
-nnoremap <leader>rc :e ~/.vimrc<cr>
+nnoremap <expr> <silent> <LEADER>rc ':e '.g:location_prefix.'/nvim/init.vim<CR>'
 nnoremap <LEADER>o o<Esc>
 nnoremap <LEADER>O O<Esc>
 noremap <LEADER>j J
 
-"Press space twice to jump to the next '<++>' and edit it
+" Press space twice to jump to the next '<++>' and edit it
 nnoremap <silent> <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4l
 
 " Opening a terminal window
-noremap <silent> <LEADER>/ :set splitbelow<CR>:split<CR>:term<CR>
+"noremap <silent> <LEADER>/ :set splitbelow<CR>:split<CR>:term<CR>
 
-"copy file
+" copy file
 nnoremap <silent> <LEADER>cf :let @+ = expand("%:t")<CR>
-"copy relative path
+" copy relative path
 "nnoremap <LEADER>cf :let @+ = expand("%")
-"copy full path
-nnoremap <silent> <LEADER>cF :let @+ = expand("%:p")<CR>
-"copy directory name
+" copy full path
+nnoremap <silent> <LEADER>cp :let @+ = expand("%:p")<CR>
+" copy directory name
 nnoremap <silent> <LEADER>cd :let @+ = expand("%:p:h")<CR>
 
 
 " ======================
 " === Basic Mappings ===
 " ======================
-noremap J 5j
-noremap K 5k
+noremap j gj
+noremap k gk
 
+noremap J <C-d>
+noremap K <C-u>
+"nnoremap <expr> J line('.')==line('w$') ? '<c-f>j':'L'
+"nnoremap <expr> K line('.')==line('w0') ? '<c-b>k':'H'
 noremap H <Home>
-noremap L <End>
+nnoremap L <End>
+xnoremap L <End>h
+nnoremap dL d<End>
+noremap 0 g0
+noremap $ g$
+
 noremap ; :
+noremap q; q:
 noremap : ;
+noremap ` ~
+noremap ~ `
 
 noremap w W
 noremap W B
 noremap e E
-noremap E gE
+noremap E ge
 
 noremap U <C-r>
+noremap <C-u> U
 noremap Y y$
-noremap x "_x
-noremap X "_d$
-noremap c "_c
-noremap C "_C
+noremap vv V
+noremap V v$h
 
-noremap = <C-a>
-noremap - <C-x>
+"noremap <Backspace> "xX
+" Do not use default register for these keys
+noremap <expr> x v:register=='+' ? '"xx' : 'x'
+noremap <expr> X v:register=='+' ? '"xX' : 'X'
+noremap <expr> c v:register=='+' ? '"xc' : 'c'
+noremap <expr> cc v:register=='+' ? '"xcc' : 'cc'
+noremap <expr> C v:register=='+' ? '"xC' : 'C'
 
-"save quit refresh
-nnoremap <silent> <C-s> :w<CR>
-inoremap <silent> <C-s> <ESC>:w<CR>
-nnoremap <silent> <C-q> :q<CR>
-nnoremap <expr> <silent> <C-r> ":source ~/.vimrc<CR>"
-
-"select all
-nnoremap sa ggVG
+map = <C-a>
+map - <C-x>
+noremap __ ==
 
 nnoremap <silent> bo :browse oldfiles<CR>
 
-"快速插入时间,与bullets默认快捷键冲突
-"nnoremap <silent> <C-d> i<C-R>=strftime('%Y-%m-%d %a %I:%M %p')<CR><Esc>
-"inoremap <silent> <C-d> <C-R>=strftime('%Y-%m-%d %a %I:%M %p')<CR><Esc>
-nnoremap <silent> ,d i<C-R>=strftime('%Y-%m-%d %H:%M %S')<CR><Esc>
-inoremap <silent> ,d <C-R>=strftime('%Y-%m-%d %H:%M %S')<CR><Esc>a
-nnoremap <silent> ,t i<C-R>=strftime('%H:%M:%S ')<CR><Esc>
-inoremap <silent> ,t <C-R>=strftime('%H:%M:%S ')<CR><Esc>a
+" save & quit & refresh
+nnoremap <silent> <C-s> :w<CR>
+inoremap <silent> <C-s> <ESC>:w<CR>
+nnoremap <silent> <C-q> :q<CR>
+nnoremap <expr> <silent> <C-r> ":source ".g:location_prefix."/nvim/init.vim<CR>"
 
-"Diff
+" Select all
+nnoremap sa ggVG
+
+" Diff
 function! DiffWith(path)
-  exec 'vertical diffsplit '.a:path
+	exec 'vertical diffsplit '.a:path
 endfunction
 command! -nargs=+ -complete=file DiffWith :call DiffWith(<f-args>)
 nnoremap \d :DiffWith 
+
+" Force buffer delete
+cnoreabbrev <expr> <silent> bd getcmdtype() == ":" && getcmdline() == 'bd' ? 'bd!' : 'bd'
+"cnoremap bd bd!
+
+" Pet messages to buffer
+nnoremap \m :put=execute('')<Left><Left>
 
 
 " ==================================
@@ -248,6 +271,7 @@ inoremap <M-k> <Up>
 inoremap <M-j> <Down>
 inoremap <M-i> <Home>
 inoremap <M-a> <End>
+inoremap <C-l> <Del>
 
 
 " ====================================
@@ -269,13 +293,16 @@ noremap B <nop>
 noremap s <nop>
 noremap S <nop>
 noremap ge <nop>
+noremap <space> <nop>
+inoremap <C-j> <nop>
+inoremap <C-k> <nop>
 
 
 " ========================
 " === Search Behaviors ===
 " ========================
 set hlsearch
-set incsearch
+set incsearch "search instant preview
 set ignorecase
 set smartcase
 set inccommand=split "即时预览命令效果，目前只支持:s替换
@@ -283,8 +310,9 @@ set inccommand=split "即时预览命令效果，目前只支持:s替换
 " Cmd hint and search index style, see :h shortmess
 set shortmess+=c
 
-"find and replace
+" find and replace
 nnoremap \s :%s//g<left><left>
+
 
 " =============
 " === Split ===
@@ -296,19 +324,19 @@ nnoremap <silent> sl :set splitright<CR>:vsplit<CR>
 nnoremap <silent> sk :set nosplitbelow<CR>:split<CR>
 nnoremap <silent> sj :set splitbelow<CR>:split<CR>
 
-"jump, <C-w><C-w>
+" Jump, <C-w><C-w>
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 
-"resize
-nnoremap <silent> <up> :res +5<CR>
-nnoremap <silent> <down> :res -5<CR>
-nnoremap <silent> <left> :vertical resize-5<CR>
-nnoremap <silent> <right> :vertical resize+5<CR>
+" Resize
+nnoremap <silent> <Up> :res +5<CR>
+nnoremap <silent> <Down> :res -5<CR>
+nnoremap <silent> <Left> :vertical resize-5<CR>
+nnoremap <silent> <Right> :vertical resize+5<CR>
 
-"vertical and horizen
+" Vertical and horizen
 noremap sv <C-w>t<C-w>H
 noremap sr <C-w>t<C-w>K
 
@@ -324,32 +352,90 @@ nnoremap <silent> <C-t>l :+tabnext<CR>
 " =====================
 " === Fold Settings ===
 " =====================
-"set foldenable              " 开始折叠
+set foldenable              " 开始折叠
 "set foldmethod=syntax       " 设置语法折叠
-"set foldcolumn=0            " 设置折叠区域的宽度
+set foldmethod=indent       " 设置缩进折叠
+"set foldcolumn=0            " 在屏幕左侧显示折叠状态条
+set foldlevel=99
 "setlocal foldlevel=1        " 设置折叠层数为
 "set foldlevelstart=99       " 打开文件时默认不折叠代码
 "set foldclose=all           " 设置为自动关闭折叠
 "nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR> " 用空格键来开关折叠
 
 
+" ==========================
+" === Terminal Behaviors ===
+" ==========================
+" Open a new instance of st with the cwd
+"nnoremap <silent> \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q<CR>
+
+let g:neoterm_autoscroll = 1
+"autocmd TermOpen term://* startinsert
+augroup TermHandling
+	autocmd!
+	" mappings for exiting insert mode
+	tnoremap <C-N> <C-\><C-N>
+	tnoremap <C-O> <C-\><C-N><C-O>
+	" Turn off line numbers, listchars, auto enter insert mode
+	autocmd TermOpen * setlocal listchars= nonumber norelativenumber | startinsert
+augroup END
+
+let g:terminal_color_0  = '#000000'
+let g:terminal_color_1  = '#FF5555'
+let g:terminal_color_2  = '#50FA7B'
+let g:terminal_color_3  = '#F1FA8C'
+let g:terminal_color_4  = '#BD93F9'
+let g:terminal_color_5  = '#FF79C6'
+let g:terminal_color_6  = '#8BE9FD'
+let g:terminal_color_7  = '#BFBFBF'
+let g:terminal_color_8  = '#4D4D4D'
+let g:terminal_color_9  = '#FF6E67'
+let g:terminal_color_10 = '#5AF78E'
+let g:terminal_color_11 = '#F4F99D'
+let g:terminal_color_12 = '#CAA9FA'
+let g:terminal_color_13 = '#FF92D0'
+let g:terminal_color_14 = '#9AEDFE'
+
+
 " =========================
-" === Markdown Snippets ===
+" === Custom Snippets =====
 " =========================
-"autocmd Filetype markdown map <leader>w yiWi[<esc>Ea](<esc>pa)
-autocmd Filetype markdown inoremap <buffer> <silent> ,, <++>
-autocmd Filetype markdown inoremap <buffer> <silent> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
+" Insert date, time
+nnoremap <silent> ,d a<C-R>=strftime('%Y-%m-%d')<CR><Esc>
+inoremap <silent> ,d <C-R>=strftime('%Y-%m-%d')<CR>
+nnoremap <silent> ,t a<C-R>=strftime('%H:%M:%S')<CR><Esc>
+inoremap <silent> ,t <C-R>=strftime('%H:%M:%S')<CR>
+
+"inoremap <silent> ‘ 「」《》<Esc>2hi
+"inoremap <silent> ’ 「」《》<Esc>2hi
+"inoremap <silent> “ 『』《》<Esc>2hi
+"inoremap <silent> ” 『』《》<Esc>2hi
+"inoremap <silent> （ （）《》<Esc>2hi
+"inoremap <silent> 《 《》<Esc>i
+"inoremap <silent> ，<LEADER> <Esc>/《》<CR>:nohlsearch<CR>"_c2l
+"nnoremap <silent> ,<LEADER> /《》<CR>:nohlsearch<CR>"_c2l
+inoremap <silent> ,p <C-r>*
+inoremap <silent> ,,  <++>
+inoremap <silent> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
+nnoremap <silent> ,f /<++><CR>:nohlsearch<CR>"_c4l
+"nnoremap <silent> ,<LEADER> a<SPACE><ESC>
 autocmd Filetype markdown inoremap <buffer> <silent> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 autocmd Filetype markdown inoremap <buffer> <silent> ,- ---<Enter><Enter>
 autocmd Filetype markdown inoremap <buffer> <silent> ,b **** <++><Esc>F*hi
+autocmd Filetype markdown xnoremap <buffer> <silent> ,b A**<Esc>gvI**<Esc>
 autocmd Filetype markdown inoremap <buffer> <silent> ,s ~~~~ <++><Esc>F~hi
+autocmd Filetype markdown xnoremap <buffer> <silent> ,s A~~<Esc>gvI~~<Esc>
 autocmd Filetype markdown inoremap <buffer> <silent> ,u <u></u><++><Esc>F/hi
 autocmd Filetype markdown inoremap <buffer> <silent> ,i ** <++><Esc>F*i
+autocmd Filetype markdown xnoremap <buffer> <silent> ,i A*<Esc>gvI*<Esc>
 autocmd Filetype markdown inoremap <buffer> <silent> ,q `` <++><Esc>F`i
+autocmd Filetype markdown xnoremap <buffer> <silent> ,q A`<Esc>gvI`<Esc>
 autocmd Filetype markdown inoremap <buffer> <silent> ,c ```<Enter><++><Enter>```<Enter><Enter><++><Esc>4kA
-autocmd Filetype markdown inoremap <buffer> <silent> ,l - [ ] <Enter><++><ESC>kA
-autocmd Filetype markdown inoremap <buffer> <silent> ,p ![](<++>)<Esc>F[a
+"autocmd Filetype markdown inoremap <buffer> <silent> ,l - [ ] <Enter><++><ESC>kA
+autocmd Filetype markdown inoremap <buffer> <silent> ,l - [ ] 
+autocmd Filetype markdown inoremap <buffer> <silent> ,m ![](<++>)<Esc>F[a
 autocmd Filetype markdown inoremap <buffer> <silent> ,a [](<++>) <++><Esc>F[a
+"autocmd Filetype markdown inoremap <buffer> <silent> ,1 <Enter>===============<Enter><Enter><++><Esc>3kA
 autocmd Filetype markdown inoremap <buffer> <silent> ,1 #<Space><Enter><Enter><++><Esc>2kA
 autocmd Filetype markdown inoremap <buffer> <silent> ,2 ##<Space><Enter><Enter><++><Esc>2kA
 autocmd Filetype markdown inoremap <buffer> <silent> ,3 ###<Space><Enter><Enter><++><Esc>2kA
@@ -360,40 +446,14 @@ autocmd Filetype markdown inoremap <buffer> <silent> ,4 ####<Space><Enter><Enter
 " ===========================
 " === Other Userful Stuff ===
 " ===========================
-" Open a new instance of st with the cwd
-nnoremap \t :tabe<CR>:-tabmove<CR>:term sh -c 'st'<CR><C-\><C-N>:q<CR>
-
 " Auto change directory to current dir
 autocmd BufEnter * silent! lcd %:p:h
 set autochdir "执行命令时默认在当前目录
 
 
-" =======================
-" === Dress Up My Vim ===
-" =======================
-set termguicolors " enable true colors support
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set background=dark
-"let ayucolor='mirage'
-"let g:oceanic_next_terminal_bold = 1
-"let g:oceanic_next_terminal_italic = 1
-"let g:one_allow_italics = 1
-
-"color dracula
-"color one
-"color deus
-"color gruvbox
-"let ayucolor='light'
-"color ayu
-"set background=light
-"color xcodedark
-
-hi NonText ctermfg=gray guifg=grey10
-"hi SpecialKey ctermfg=blue guifg=grey70
-
-" =====================
-" === Plugin Manage ===
-" =====================
+" ======================
+" === Plugin Install ===
+" ======================
 source ~/bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect('bundle/{}', '~/bundle/{}')
 
@@ -492,31 +552,32 @@ execute pathogen#infect('bundle/{}', '~/bundle/{}')
 "Plug 'fadein/vim-FIGlet' "You need to install figlet to local first
 
 
-" =======================
-" === Dress Up My Vim ===
-" =======================
-set termguicolors " enable true colors support
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+" ===================== Start of Plugin Settings =====================
+
+
+" =============
+" === Theme ===
+" =============
 set background=dark
-"let ayucolor='mirage'
-"let g:oceanic_next_terminal_bold = 1
-"let g:oceanic_next_terminal_italic = 1
-"let g:one_allow_italics = 1
-
-"color dracula
-"color one
-"color deus
-"color gruvbox
-"let ayucolor='light'
-"color ayu
 "set background=light
-"color xcodedark
 
-highlight NonText ctermfg=gray guifg=grey10
-"highlight SpecialKey ctermfg=blue guifg=grey70
+"说明：colo = colorscheme = colorscheme
+"colo ayu
+"let ayucolor='light'
+"colo one
+"colo deus
+"colo dracula
+"colo xcodedark
+"colo snazzy
+"colo snazzy
+"let g:SnazzyTransparent = 1
 
-
-" ===================== Start of Plugin Settings ===================
+"color gruvbox
+"let g:gruvbox_contrast_dark        = 'soft' "soft|medium|hard
+"let g:gruvbox_light                = 'medium'
+"let g:gruvbox_hls_cursor           = 'orange'
+"let g:gruvbox_invert_selection     = '0'
+"let g:gruvbox_invert_indent_guides = '0'
 
 
 " ===================== End of Plugin Settings =====================

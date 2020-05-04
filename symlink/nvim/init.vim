@@ -744,6 +744,7 @@ call plug#end()
 
 " ===================== Start of Plugin Settings =====================
 
+
 " ===============
 " === Airline ===
 " ===============
@@ -1600,7 +1601,7 @@ let g:far#enable_undo = 1
 " === Startify ===
 " ================
 "scriptencoding utf-8
-let g:startify_bookmarks = [ {'g': 'f:/ProgramFiles/GitHub/config_files_backup_repo'} ]
+let g:startify_bookmarks = [ {'g': 'f:/ProgramFiles/GitHub/dotfiles'} ]
 let g:startify_lists = [
 	\ { 'type': 'files',     'header': ['   MRU']            },
 	\ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
