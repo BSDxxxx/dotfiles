@@ -29,6 +29,9 @@ include /usr/share/taskwarrior/dark-red-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
 
+# hide modifiy history
+journal.info = off
+
 # Default urgency coefficient
 urgency.uda.priority.H.coefficient = 6.0
 urgency.uda.priority.L.coefficient = 1.8
@@ -55,10 +58,10 @@ urgency.waiting.coefficient        = -3.0 # waiting task
 urgency.blocked.coefficient        = -5.0 # blocked by other tasks
 
 # UDA urgency coefficient
-#urgency.uda.tags.c4.coefficient=10
-#urgency.uda.tags.c1.coefficient=8
-#urgency.uda.tags.c3.coefficient=4
-#urgency.uda.tags.c2.coefficient=2
+#urgency.uda.tags.c4.coefficient = 10
+#urgency.uda.tags.c1.coefficient = 8
+#urgency.uda.tags.c3.coefficient = 4
+#urgency.uda.tags.c2.coefficient = 2
 
 # Sync
 taskd.certificate = private.cert
