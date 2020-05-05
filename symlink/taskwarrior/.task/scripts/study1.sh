@@ -1,0 +1,7 @@
+str=$(task add project:考研 +高数             <++>)
+id =$(echo $str | grep -o -E '[0-9]+')
+str=$(task add project:考研 +高数 depends:$id <++>)
+id =$(echo $str | grep -o -E '[0-9]+')
+str=$(task add project:考研 +英语 depends:$id <++>)
+id =$(echo $str | grep -o -E '[0-9]+')
+str=$(task add project:考研 +英语 depends:$id <++>)
