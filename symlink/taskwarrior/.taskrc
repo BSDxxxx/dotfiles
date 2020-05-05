@@ -29,34 +29,67 @@ include /usr/share/taskwarrior/dark-red-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
 
-taskd.certificate=private.cert
-taskd.key=private.key
-taskd.ca=ca.cert.pem
-taskd.server=taskwarrior.inthe.am:53589
-taskd.credentials=inthe_am/yaohunzhanyue/41c7ffbb-990a-4f64-9bdd-1fca7382a7c0
-taskd.trust=ignore hostname
+# Default urgency coefficient
+urgency.uda.priority.H.coefficient = 6.0
+urgency.uda.priority.L.coefficient = 1.8
+urgency.uda.priority.M.coefficient = 3.9
+color.uda.priority.H               = color255
+color.uda.priority.L               = color245
+color.uda.priority.M               = color250
+uda.priority.label                 = Priority
+uda.priority.type                  = string
+uda.priority.values                = H,M,L,
+urgency.user.tag.next.coefficient  = 15.0 # +tag1
+urgency.due.coefficient            = 12.0 # overdue or near due date
+urgency.blocking.coefficient       = 8.0 # blocking other tasks
+urgency.uda.priority.H.coefficient = 6.0 # high Priority
+urgency.uda.priority.M.coefficient = 3.9 # medium Priority
+urgency.uda.priority.L.coefficient = 1.8 # low Priority
+urgency.scheduled.coefficient      = 5.0 # scheduled tasks
+urgency.active.coefficient         = 4.0 # already started tasks
+urgency.age.coefficient            = 2.0 # coefficient for age
+urgency.annotations.coefficient    = 1.0 # has annotations
+urgency.tags.coefficient           = 1.0 # has tags
+urgency.project.coefficient        = 1.0 # assigned to any project
+urgency.waiting.coefficient        = -3.0 # waiting task
+urgency.blocked.coefficient        = -5.0 # blocked by other tasks
 
-uda.intheamattachments.type=string
-uda.intheamattachments.label=Inthe.AM Attachments
-uda.intheamoriginalemailsubject.type=string
-uda.intheamoriginalemailsubject.label=Inthe.AM E-mail Subject
-uda.intheamoriginalemailid.type=numeric
-uda.intheamoriginalemailid.label=Inthe.AM E-mail ID
-uda.intheamtrelloid.type=string
-uda.intheamtrelloid.label=Inthe.AM Trello Object ID
-uda.intheamtrelloboardid.type=string
-uda.intheamtrelloboardid.label=Inthe.AM Trello Board ID
-uda.intheamtrellolistid.type=string
-uda.intheamtrellolistid.label=Inthe.AM Trello List ID
-uda.intheamtrellolistname.type=string
-uda.intheamtrellolistname.label=Inthe.AM Trello List Name
-uda.intheamtrellourl.type=string
-uda.intheamtrellourl.label=Inthe.AM Trello URL
-uda.intheamtrellodescription.type=string
-uda.intheamtrellodescription.label=Inthe.AM Trello Description
-uda.intheamtrellolastupdated.type=string
-uda.intheamtrellolastupdated.label=Inthe.AM Trello Last Updated
-uda.intheamduplicateof.type=string
-uda.intheamduplicateof.label=Inthe.AM Duplicate of Task
-uda.intheammergedfrom.type=string
-uda.intheammergedfrom.label=Inthe.AM Duplicate Tasks Merged
+# UDA urgency coefficient
+#urgency.uda.tags.c4.coefficient=10
+#urgency.uda.tags.c1.coefficient=8
+#urgency.uda.tags.c3.coefficient=4
+#urgency.uda.tags.c2.coefficient=2
+
+# Sync
+taskd.certificate = private.cert
+taskd.key         = private.key
+taskd.ca          = ca.cert.pem
+taskd.server      = taskwarrior.inthe.am:53589
+taskd.credentials = inthe_am/yaohunzhanyue/41c7ffbb-990a-4f64-9bdd-1fca7382a7c0
+taskd.trust       = ignore hostname
+
+# inthe.am Trello UDA
+uda.intheamattachments.type           = string
+uda.intheamattachments.label          = Inthe.AM Attachments
+uda.intheamoriginalemailsubject.type  = string
+uda.intheamoriginalemailsubject.label = Inthe.AM E-mail Subject
+uda.intheamoriginalemailid.type       = numeric
+uda.intheamoriginalemailid.label      = Inthe.AM E-mail ID
+uda.intheamtrelloid.type              = string
+uda.intheamtrelloid.label             = Inthe.AM Trello Object ID
+uda.intheamtrelloboardid.type         = string
+uda.intheamtrelloboardid.label        = Inthe.AM Trello Board ID
+uda.intheamtrellolistid.type          = string
+uda.intheamtrellolistid.label         = Inthe.AM Trello List ID
+uda.intheamtrellolistname.type        = string
+uda.intheamtrellolistname.label       = Inthe.AM Trello List Name
+uda.intheamtrellourl.type             = string
+uda.intheamtrellourl.label            = Inthe.AM Trello URL
+uda.intheamtrellodescription.type     = string
+uda.intheamtrellodescription.label    = Inthe.AM Trello Description
+uda.intheamtrellolastupdated.type     = string
+uda.intheamtrellolastupdated.label    = Inthe.AM Trello Last Updated
+uda.intheamduplicateof.type           = string
+uda.intheamduplicateof.label          = Inthe.AM Duplicate of Task
+uda.intheammergedfrom.type            = string
+uda.intheammergedfrom.label           = Inthe.AM Duplicate Tasks Merged
