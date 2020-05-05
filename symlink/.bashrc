@@ -188,6 +188,7 @@
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 export RANGER_LOAD_DEFAULT_RC=FALSE
 export MYVIMRC=~/.vim/vimrc
+export EDITOR=vim
 alias vi='vim'
 alias ls='ls --color'
 alias la='ls -a --color'
