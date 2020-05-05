@@ -64,9 +64,9 @@ urgency.blocked.coefficient        = -5.0 # blocked by other tasks
 #urgency.uda.tags.c2.coefficient = 2
 
 # Sync
-taskd.certificate = private.cert
-taskd.key         = private.key
-taskd.ca          = ca.cert.pem
+taskd.certificate = ~/.task/private.cert
+taskd.key         = ~/.task/private.key
+taskd.ca          = ~/.task/ca.cert.pem
 taskd.server      = taskwarrior.inthe.am:53589
 taskd.credentials = inthe_am/yaohunzhanyue/41c7ffbb-990a-4f64-9bdd-1fca7382a7c0
 taskd.trust       = ignore hostname
