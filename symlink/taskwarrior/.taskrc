@@ -42,7 +42,7 @@ color.uda.priority.M               = color250
 uda.priority.label                 = Priority
 uda.priority.type                  = string
 uda.priority.values                = H,M,L,
-urgency.user.tag.next.coefficient  = 15.0 # +tag1
+urgency.user.tag.next.coefficient  = 15.0 # +next
 urgency.due.coefficient            = 12.0 # overdue or near due date
 urgency.blocking.coefficient       = 8.0 # blocking other tasks
 urgency.uda.priority.H.coefficient = 6.0 # high Priority
@@ -58,10 +58,8 @@ urgency.waiting.coefficient        = -3.0 # waiting task
 urgency.blocked.coefficient        = -5.0 # blocked by other tasks
 
 # UDA urgency coefficient
-#urgency.uda.tags.c4.coefficient = 10
-#urgency.uda.tags.c1.coefficient = 8
-#urgency.uda.tags.c3.coefficient = 4
-#urgency.uda.tags.c2.coefficient = 2
+urgency.uda.tags.高数.coefficient = 1
+urgency.uda.tags.政治.coefficient = 1
 
 # Sync
 taskd.certificate = ~/.task/private.cert
