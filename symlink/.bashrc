@@ -197,6 +197,10 @@ alias ra='ranger'
 alias s='neofetch'
 alias c='chezmoi'
 echo 'Sync your tasks & dotfiles !!!'
+source ~/.timewarrior/scripts/timew-completion.bash
+setopt PROMPT_SUBST
+PROMPT='%B%F{red}%n@%m%f%F{yellow}[%D{%L:%M:%S}]%f:%F{blue}${${(%):-%~}}%f$ %b'
+TMOUT=1
 zsh
 
 # dircolors/ls --colors=""
