@@ -18,7 +18,7 @@ data.location=~/.task
 #include /usr/share/taskwarrior/light-256.theme
 #include /usr/share/taskwarrior/dark-16.theme
 #include /usr/share/taskwarrior/dark-256.theme
-include /usr/share/taskwarrior/dark-red-256.theme
+#include /usr/share/taskwarrior/dark-red-256.theme
 #include /usr/share/taskwarrior/dark-green-256.theme
 #include /usr/share/taskwarrior/dark-blue-256.theme
 #include /usr/share/taskwarrior/dark-violets-256.theme
@@ -28,9 +28,20 @@ include /usr/share/taskwarrior/dark-red-256.theme
 #include /usr/share/taskwarrior/solarized-dark-256.theme
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
+color.blocked=white on gray2
+color.blocing=white on color15
+color.overdue=color5
+color.summary.bar=black on rgb050
+color.burndown.done=on rgb050
+color.burndown.started=on rgb543
+color.burndown.pending=on rgb411
 
 # hide modifiy history
 journal.info = off
+
+# Report
+#report.next.columns=id,project,due,relative,description,urgency
+#report.nextlabels=id,Project,Due,Description,Urg
 
 # Default urgency coefficient
 urgency.uda.priority.H.coefficient = 6.0
