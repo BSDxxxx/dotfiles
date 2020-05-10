@@ -29,7 +29,7 @@ data.location=~/.task
 #include /usr/share/taskwarrior/solarized-light-256.theme
 #include /usr/share/taskwarrior/no-color.theme
 color.blocked=white on gray2
-color.blocing=white on color15
+color.blocking=white on color15
 color.overdue=color5
 color.summary.bar=black on rgb050
 color.burndown.done=on rgb050
@@ -69,8 +69,8 @@ urgency.waiting.coefficient        = -3.0 # waiting task
 urgency.blocked.coefficient        = -5.0 # blocked by other tasks
 
 # UDA urgency coefficient
-urgency.uda.tags.高数.coefficient = 1
-urgency.uda.tags.政治.coefficient = 1
+#urgency.uda.tags.高数.coefficient = 1
+#urgency.uda.tags.政治.coefficient = 1
 
 # Sync
 taskd.certificate = ~/.task/private.cert
