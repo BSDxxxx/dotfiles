@@ -234,3 +234,39 @@ txn:
   type: interval
   before: 
   after: {"id":1,"start":"20200508T153000Z","end":"20200508T161647Z","tags":["核心词汇","考研","英语"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200509T032307Z","tags":["2020考研政治真题印象","政治","考研"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200509T032307Z","tags":["2020考研政治真题印象","政治","考研"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200509T032307Z","end":"20200509T074208Z","tags":["2020考研政治真题印象","政治","考研"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200509T032307Z","end":"20200509T074208Z","tags":["2020考研政治真题印象","政治","考研"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200509T043000Z","end":"20200509T074208Z","tags":["2020考研政治真题印象","政治","考研"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200509T085657Z","tags":["2020考研政治真题印象","政治","考研"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200509T085657Z","tags":["2020考研政治真题印象","政治","考研"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200509T085657Z","end":"20200509T114703Z","tags":["2020考研政治真题印象","政治","考研"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200509T085657Z","end":"20200509T114703Z","tags":["2020考研政治真题印象","政治","考研"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200509T085657Z","end":"20200509T100000Z","tags":["2020考研政治真题印象","政治","考研"]}
