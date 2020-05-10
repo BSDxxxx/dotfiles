@@ -139,11 +139,19 @@ inoremap <F2> <ESC>:set spell! spell?<CR>a
 nnoremap <C-Tab> geea<C-x>s
 inoremap <C-Tab> <Esc>geea<C-x>s
 
-" 浏览时根据窗口大小自动换行
+" 浏览时根据窗口大小自动折行
 set wrap
 "autocmd BufEnter vimwiki.marodown.pandoc set nowrap
 "noremap <F5> :set wrap! wrap?<CR>
-set textwidth=0 "写入模式自动换行,0代表不自动换行
+set linebreak "折行时以单词为界
+set breakindent "折行继承上一行的缩进
+
+" 自动换行
+set textwidth=81 "写入模式自动换行,0代表不自动换行
+set formatoptions=qt1jmMncrol "这是一个重要选项，详见:h fo-table
+set colorcolumn=81 "高亮第81列（一行代码最好不超过80个字）
+
+set virtualedit=block
 
 set list "显示制表符和空格
 "noremap <F6> :set list! list?<CR>
@@ -201,9 +209,6 @@ set ttyfast "should make scrolling faster
 set lazyredraw "same as above
 
 set visualbell
-
-"set colorcolumn=80 "高亮第80列（一行代码最好不超过79个字）
-set virtualedit=block
 
 set indentexpr=
 set backspace=indent,eol,start
@@ -1390,8 +1395,8 @@ endfunction
 "endfunction
 
 let g:pandoc#toc#position                               = 'left'
-let g:pandoc#formatting#textwidth                       = 0 "default 79
-let g:pandoc#formatting#mode                            = 's'
+let g:pandoc#formatting#textwidth                       = 79 "default 79
+let g:pandoc#formatting#mode                            = 'h'
 let g:pandoc#formatting#smart_autoformat_on_cursormoved = 1
 let g:pandoc#folding#level                              = 9
 let g:pandoc#folding#fdc                                = 0
