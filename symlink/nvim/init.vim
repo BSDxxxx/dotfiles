@@ -710,14 +710,16 @@ Plug 'dkarter/bullets.vim', { 'for': ['vimwiki', 'markdown', 'pandoc', 'diary', 
 Plug 'vim-pandoc/vim-pandoc' "pandoc支持，folding 功能意外的好用，对markdown 支持度很高
 Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': ['vimwiki', 'markdown', 'pandoc', 'diary'] } "pandoc markdown syntax highlight
 
-" Other useful utilities
-"Plug 'blindFS/vim-taskwarrior'
-"Plug 'linuxcaffe/tw-airline-plugin'
+" Painting
 "Plug 'liuchengxu/graphviz.vim'
 "Plug 'wannesm/wmgraphviz.vim'
 "Plug 'weirongxu/plantuml-previewer.vim' "preview plantuml with browser
 Plug 'scrooloose/vim-slumlord', { 'for': ['uml', 'plantuml'] } "live preview of plantuml
-Plug 'aklt/plantuml-syntax', { 'for': ['uml', 'plantuml'] } "
+Plug 'aklt/plantuml-syntax', { 'for': ['uml', 'plantuml'] }
+
+" Other useful utilities
+"Plug 'blindFS/vim-taskwarrior'
+"Plug 'linuxcaffe/tw-airline-plugin'
 Plug 'tpope/vim-speeddating' "make <C-a> & <C-x> works for date format
 Plug 'tpope/vim-repeat' "enhance . operation
 Plug 'easymotion/vim-easymotion' "光标快速定位、跳转
@@ -1179,7 +1181,7 @@ let g:mkdp_preview_options = {
 	\ 'mkit': {},
 	\ 'katex': {},
 	\ 'uml': {},
-	\ 'maid': {},
+	\ 'maid': {'theme' : 'dark'},
 	\ 'disable_sync_scroll': 0,
 	\ 'sync_scroll_type': 'middle',
 	\ 'hide_yaml_meta': 1,
@@ -1237,8 +1239,8 @@ autocmd filetype vimwiki.markdown.pandoc inoremap <buffer> <silent> <LEADER>x <E
 "autocmd filetype vimwiki.markdown.pandoc xnoremap <buffer> <silent> _ <Plug>VimwikiRemoveHeaderLevel
 autocmd filetype vimwiki.markdown.pandoc nnoremap <buffer> <silent> + I#<Esc>
 autocmd filetype vimwiki.markdown.pandoc xnoremap <buffer> <silent> + I#<Esc>
-autocmd filetype vimwiki.markdown.pandoc nnoremap <buffer> <silent> _ I<Del><Esc>
-autocmd filetype vimwiki.markdown.pandoc xnoremap <buffer> <silent> _ I<Del><Esc>
+"autocmd filetype vimwiki.markdown.pandoc nnoremap <buffer> <silent> _ I<Del><Esc>
+"autocmd filetype vimwiki.markdown.pandoc xnoremap <buffer> <silent> _ I<Del><Esc>
 nmap <silent> <Leader>wi <Plug>VimwikiIndex
 nmap <silent> <Leader>w<Leader>i <Plug>VimwikiDiaryIndex
 nmap <silent> <Leader>w<Leader>g <Plug>VimwikiDiaryGenerateLinks
