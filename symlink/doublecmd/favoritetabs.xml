@@ -4,7 +4,7 @@
     <FavoriteTabs UniqueID="{BFC9C893-42D8-4EDB-AD5F-3985B2C6C0FF}" Name="AHK" DestLeft="5" DestRight="1" ExistingKeep="5" SaveDirHistory="False"/>
     <FavoriteTabs UniqueID="{355E8FB6-C6C6-4758-908C-4E7764E0D8BD}" Name="Downloads" DestLeft="5" DestRight="1" ExistingKeep="5" SaveDirHistory="False"/>
     <FavoriteTabs UniqueID="{65944538-1C7A-4ED5-B337-1C1C061D772E}" Name="DebainRoot" DestLeft="5" DestRight="1" ExistingKeep="5" SaveDirHistory="False"/>
-    <FavoriteTabs UniqueID="{1CCC5FFD-F748-4551-A7D5-135CF9D5C804}" Name="Config_files_backup_repo" DestLeft="5" DestRight="1" ExistingKeep="5" SaveDirHistory="False"/>
+    <FavoriteTabs UniqueID="{E95FDAB4-F208-4E59-93DB-D5B7E28DFA54}" Name="Dotfiles" DestLeft="5" DestRight="1" ExistingKeep="5" SaveDirHistory="False"/>
   </FavoriteTabsList>
   <ActualTabs>
     <GUIDBFC9C893-42D8-4EDB-AD5F-3985B2C6C0FF>
@@ -121,16 +121,37 @@
         </Tab>
       </Right>
     </GUID65944538-1C7A-4ED5-B337-1C1C061D772E>
-    <GUID1CCC5FFD-F748-4551-A7D5-135CF9D5C804>
+    <GUIDE95FDAB4-F208-4E59-93DB-D5B7E28DFA54>
       <Left>
-        <ActiveTab>0</ActiveTab>
+        <ActiveTab>1</ActiveTab>
+        <Tab>
+          <FileView Type="columns">
+            <Sortings>
+              <Sorting>
+                <Direction>1</Direction>
+                <Function>12</Function>
+              </Sorting>
+            </Sortings>
+            <History>
+              <Entry Active="True">
+                <FileSource Type="FileSystem"/>
+                <Paths>
+                  <Path>f:\ProgramFiles\GitHub\</Path>
+                </Paths>
+              </Entry>
+            </History>
+            <ColumnsView>
+              <ColumnsSet>Default</ColumnsSet>
+            </ColumnsView>
+          </FileView>
+        </Tab>
         <Tab>
           <FileView Type="columns">
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path>C:\Users\zyx\.local\share\chezmoi\dotfile\</Path>
+                  <Path>e:\Downloads\</Path>
                 </Paths>
               </Entry>
             </History>
@@ -148,7 +169,7 @@
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path>f:\ProgramFiles\GitHub\config_files_backup_repo\</Path>
+                  <Path>f:\ProgramFiles\GitHub\dotfiles\</Path>
                 </Paths>
               </Entry>
             </History>
@@ -158,6 +179,6 @@
           </FileView>
         </Tab>
       </Right>
-    </GUID1CCC5FFD-F748-4551-A7D5-135CF9D5C804>
+    </GUIDE95FDAB4-F208-4E59-93DB-D5B7E28DFA54>
   </ActualTabs>
 </doublecmd>
