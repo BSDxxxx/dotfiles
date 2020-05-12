@@ -37,7 +37,11 @@ color.burndown.done=on rgb050
 color.burndown.started=on rgb543
 color.burndown.pending=on rgb411
 
-# hide modifiy history
+# Filter
+regex=on
+search.case.sensitive=no
+
+# Hide modifiy history
 journal.info = off
 
 # Report

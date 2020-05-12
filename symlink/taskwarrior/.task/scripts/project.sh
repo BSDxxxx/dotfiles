@@ -1,5 +1,5 @@
 while true
 	do clear
-	task summary
+	task summary project.not:
 	sleep 30
 done
