@@ -165,71 +165,7 @@
   <Tabs>
     <OpenedTabs>
       <Left>
-        <ActiveTab>1</ActiveTab>
-        <Tab>
-          <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
-            <History>
-              <Entry Active="True">
-                <FileSource Type="FileSystem"/>
-                <Paths>
-                  <Path Filename="vnote">f:\ProgramFiles\GitHub\config_files_backup_repo\</Path>
-                  <Path Filename="learn_git">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\learn_git\</Path>
-                  <Path Filename="learn_git">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\learn_git\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="GitHub">f:\ProgramFiles\</Path>
-                  <Path Filename="dotfiles">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="dotfiles">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="chezmoi">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\chezmoi\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="dotfiles">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="test">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\test\</Path>
-                  <Path Filename="test">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="dotfiles">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="symlink_my.config.tmpl">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="git">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\git\</Path>
-                  <Path Filename="git">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\git\</Path>
-                  <Path Filename="git">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\git\</Path>
-                  <Path Filename="git">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\git\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="config_files_backup_repo">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\config_files_backup_repo\</Path>
-                  <Path Filename="">f:\ProgramFiles\GitHub\</Path>
-                </Paths>
-              </Entry>
-            </History>
-            <ColumnsView>
-              <ColumnsSet>Default</ColumnsSet>
-            </ColumnsView>
-          </FileView>
-        </Tab>
+        <ActiveTab>0</ActiveTab>
         <Tab>
           <FileView Type="columns">
             <History>
@@ -253,6 +189,15 @@
                   <Path Filename="joplin-desktop">C:\Users\zyx\.config\</Path>
                   <Path Filename="Downloads">e:\</Path>
                   <Path Filename="bitbug_favicon.ico">e:\Downloads\</Path>
+                  <Path Filename="Languages">E:\KeePass-2.44-portable\</Path>
+                  <Path Filename="..">E:\KeePass-2.44-portable\Languages\</Path>
+                  <Path Filename="Plugins">E:\KeePass-2.44-portable\</Path>
+                  <Path Filename="..">E:\KeePass-2.44-portable\Plugins\</Path>
+                  <Path Filename="Plugins">E:\KeePass-2.44-portable\</Path>
+                  <Path Filename="..">E:\KeePass-2.44-portable\Plugins\</Path>
+                  <Path Filename="debug.log">E:\KeePass-2.44-portable\</Path>
+                  <Path Filename="..">C:\Users\zyx\</Path>
+                  <Path Filename="zyx">C:\Users\</Path>
                 </Paths>
               </Entry>
             </History>
@@ -266,66 +211,21 @@
         <ActiveTab>0</ActiveTab>
         <Tab>
           <FileView Type="columns">
-            <Sortings>
-              <Sorting>
-                <Direction>1</Direction>
-                <Function>12</Function>
-              </Sorting>
-            </Sortings>
             <History>
               <Entry Active="True">
                 <FileSource Type="FileSystem"/>
                 <Paths>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\test\</Path>
-                  <Path Filename="test">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\test\</Path>
-                  <Path Filename="dot_config">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="test">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\test\</Path>
-                  <Path Filename="test">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\dot_config\test\</Path>
-                  <Path Filename="test">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="encrypted_testfile.txt">f:\ProgramFiles\GitHub\dotfiles\dot_config\test\</Path>
-                  <Path Filename="chezmoi">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="chezmoi.toml.tmpl">f:\ProgramFiles\GitHub\dotfiles\dot_config\chezmoi\</Path>
-                  <Path Filename="chezmoi">f:\ProgramFiles\GitHub\dotfiles\dot_config\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="dotfiles">f:\ProgramFiles\GitHub\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\</Path>
+                  <Path Filename="">f:\ProgramFiles\GitHub\config_files_backup_repo\</Path>
                   <Path Filename="dotfiles">f:\ProgramFiles\GitHub\</Path>
                   <Path Filename="symlink">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="nvim">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="ZFVimIM.vim">f:\ProgramFiles\GitHub\dotfiles\symlink\nvim\</Path>
-                  <Path Filename="nvim">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="symlink">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="nvim">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="quickmenu.vim.vimbak">f:\ProgramFiles\GitHub\dotfiles\symlink\nvim\</Path>
-                  <Path Filename="nvim">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="symlink">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="nvim">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename=".quickui.vim.un~">f:\ProgramFiles\GitHub\dotfiles\symlink\nvim\</Path>
-                  <Path Filename="nvim">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="coc-settings.json">f:\ProgramFiles\GitHub\dotfiles\symlink\nvim\</Path>
+                  <Path Filename="KP">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
+                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\symlink\KP\</Path>
+                  <Path Filename="KP">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
+                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\symlink\KP\</Path>
                   <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="dotfiles">f:\ProgramFiles\GitHub\</Path>
                   <Path Filename="symlink">f:\ProgramFiles\GitHub\dotfiles\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="Books">h:\</Path>
-                  <Path Filename="IT">h:\Books\</Path>
-                  <Path Filename="..">e:\Downloads\</Path>
-                  <Path Filename="学习资料">h:\</Path>
-                  <Path Filename="武功秘籍">h:\学习资料\</Path>
-                  <Path Filename="爱经解密">h:\学习资料\武功秘籍\</Path>
-                  <Path Filename="爱经解密">h:\学习资料\武功秘籍\爱经解密\</Path>
-                  <Path Filename="..">h:\学习资料\武功秘籍\爱经解密\爱经解密\</Path>
-                  <Path Filename="【重点学习】PC肌锻炼课程">h:\学习资料\武功秘籍\爱经解密\</Path>
-                  <Path Filename="PC肌练习.doc">h:\学习资料\武功秘籍\爱经解密\【重点学习】PC肌锻炼课程\</Path>
-                  <Path Filename="..">e:\Downloads\</Path>
-                  <Path Filename="..">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
-                  <Path Filename="vimwiki">f:\</Path>
-                  <Path Active="True" Filename="diary">f:\vimwiki\</Path>
-                  <Path Filename="..">f:\vimwiki\diary\</Path>
+                  <Path Filename="KeePass">f:\ProgramFiles\GitHub\dotfiles\symlink\</Path>
+                  <Path Filename="encrypted_KeePass.config.xml">f:\ProgramFiles\GitHub\dotfiles\symlink\KeePass\</Path>
                 </Paths>
               </Entry>
             </History>
