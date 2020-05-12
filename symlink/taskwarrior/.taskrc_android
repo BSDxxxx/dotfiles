@@ -1,0 +1,17 @@
+taskd.certificate=/storage/emulated/0/Android/data/kvj.taskw/files/private.certificate.pem
+taskd.key=/storage/emulated/0/Android/data/kvj.taskw/files/private.key.pem
+taskd.ca=/storage/emulated/0/Android/data/kvj.taskw/files/ca.cert.pem
+taskd.server=taskwarrior.inthe.am:53589
+taskd.credentials=inthe_am/yaohunzhanyue/41c7ffbb-990a-4f64-9bdd-1fca7382a7c0
+taskd.ciphers=NORMAL
+
+# sync every 60 minutes
+android.sync.periodical=60
+# sync 3 minutes after change
+android.sync.onchange=3
+# retry sync every 10 minutes on sync error
+android.sync.onerror=30
+#android.sync.notification=all
+#android.reports=next,list,waiting
+#android.report.default=list
+android.debug=y
