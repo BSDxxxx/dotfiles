@@ -7,6 +7,7 @@ doskey ex=explorer $*
 doskey q=exit
 doskey c=chezmoi $*
 doskey caps2esc=c2e
+doskey cp=copy $*
 set ~=C:\Users\zyx
 for /F %%i in ('chezmoi source-path') do (set chezmoi source-path=%%i)
 chcp 65001
