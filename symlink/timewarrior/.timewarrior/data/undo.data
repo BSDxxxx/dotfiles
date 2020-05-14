@@ -491,3 +491,90 @@ txn:
   type: interval
   before: 
   after: {"id":1,"start":"20200511T140509Z","end":"20200511T165230Z","tags":["another half of 微分方程1","考研","高数"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200512T041026Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200512T041026Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200512T041026Z","end":"20200512T075154Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200512T041026Z","end":"20200512T075154Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200512T041026Z","end":"20200512T043000Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200512T091945Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200512T091945Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200512T091945Z","end":"20200512T092434Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200512T093359Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200512T093359Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200512T093359Z","end":"20200512T102112Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200512T093359Z","end":"20200512T102112Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200512T093359Z","end":"20200512T101000Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200514T034210Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200514T034210Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200514T034210Z","end":"20200514T051652Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200514T034210Z","end":"20200514T051652Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200514T034210Z","end":"20200514T044000Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200514T092215Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200514T092215Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200514T092215Z","end":"20200514T094612Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: 
+  after: {"id":0,"start":"20200514T133812Z","tags":["微分方程2","考研","高数"]}
+txn:
+  type: interval
+  before: {"id":1,"start":"20200514T133812Z","tags":["微分方程2","考研","高数"]}
+  after: 
+  type: interval
+  before: 
+  after: {"id":1,"start":"20200514T133812Z","end":"20200514T160435Z","tags":["微分方程2","考研","高数"]}
