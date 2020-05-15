@@ -104,9 +104,10 @@ unsetopt BG_NICE
 
 export PYTHONPATH=/usr/local/lib/python2.7/site-packages
 export RANGER_LOAD_DEFAULT_RC=FALSE
-export MYVIMRC=~/.vim/vimrc
-export EDITOR=vim
-alias vi='vim'
+#export MYVIMRC=~/.vim/vimrc
+export MYVIMRC=~/.config/nvim/init.vim
+export EDITOR=nvim
+alias vi='nvim'
 alias ls='ls --color'
 alias la='ls -a --color'
 alias ll='ls -l --color'
