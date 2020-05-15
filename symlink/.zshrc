@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/xzyx/.oh-my-zsh"
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -113,6 +113,8 @@ alias ll='ls -l --color'
 alias ra='ranger'
 alias s='neofetch'
 alias c='chezmoi'
+alias chcolor='/data/data/com.termux/files/home/.termux/colors.sh'
+alias chfont='/data/data/com.termux/files/home/.termux/fonts.sh'
 echo 'Sync your tasks & dotfiles !!!'
 source ~/.timewarrior/scripts/timew-completion.bash
 
