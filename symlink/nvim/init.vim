@@ -1379,7 +1379,7 @@ augroup END
 let g:bullets_set_mappings                = 1
 let g:bullets_enabled_file_types          = ['vimwiki', 'markdown', 'pandoc', 'diary', 'txt', 'gitcommit', 'scratch']
 let g:bullets_enable_in_empty_buffers     = 1
-let g:bullets_delete_last_bullet_if_empty = 0
+let g:bullets_delete_last_bullet_if_empty = 1
 
 
 " ==============
