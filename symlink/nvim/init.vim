@@ -1139,10 +1139,7 @@ nmap <LEADER>ts <Plug>(coc-translator-p)
 "nmap <leader>a  <Plug>(coc-codeaction-selected)
 
 " coc-markmap
-"nmap <Leader>mm <Plug>(coc-markmap-create)
-" Create markmap from the selected lines
-"vmap <Leader>m <Plug>(coc-markmap-create-v)
-command! -range=% Markmap CocCommand markmap.create <line1> <line2>
+command! -range=% Markmap :call CocAction('activeExtension', 'coc-markmap') | CocCommand markmap.create --enable-mathjax <line1> <line2>
 
 " coc-pairs
 autocmd FileType vim let b:coc_pairs_disabled = ['"']
