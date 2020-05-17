@@ -7,7 +7,7 @@
 "This is hjkl version, win10 nvim-qt
 ".md is recognized as vimwiki.markdown.pandoc type
 "查看vim键位说明:help key-notation  or  <C-v> in insert mode then press other key
-"Todo: markdown insert link function; encrypt
+"Todo: markdown insert link function; encrypt; try far.vim & vim-easygrep
 
 let g:python_host_prog = 'D:\Python27\python.exe'
 let g:python3_host_prog = 'D:\Python38\python.exe'
@@ -134,6 +134,8 @@ set relativenumber "相对行号
 set pastetoggle=<F1>
 
 " 英文拼写检查,相关指令见:help spell
+set spelllang+=cjk
+set spellcapcheck=
 nnoremap <F2> :set spell! spell?<CR>
 inoremap <F2> <ESC>:set spell! spell?<CR>a
 nnoremap <C-Tab> geea<C-x>s
@@ -388,7 +390,7 @@ nnoremap <C-l> <C-w>l
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 
-" Resize
+" Resize, <C-w>= resize to average
 nnoremap <silent> <Up> :res +5<CR>
 nnoremap <silent> <Down> :res -5<CR>
 nnoremap <silent> <Left> :vertical resize-5<CR>
@@ -639,6 +641,8 @@ Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeTabsToggle' } "nerdtree识�
 Plug 'ZSaberLv0/nerdtree_menu_util', { 'on': 'NERDTreeTabsToggle' } "add useful item to nerdtree menu
 Plug 'ryanoasis/vim-devicons' "Add file type icons to Vim plugins such as: NERTTree, airline, startify...
 "Plug 'Yggdroot/LeaderF', {'do': '.\install.bat' } "Error on windows
+
+" Find & Replace
 if isdirectory('/usr/local/opt/fzf')
 	Plug '/usr/local/opt/fzf'
 else
@@ -647,7 +651,9 @@ endif
 Plug 'junegunn/fzf.vim'
 "Plug 'yuki-ycino/fzf-preview.vim' "Error on windows, using floaterm instead
 "Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' } "create gitignore file(use coc-gitignore instead)
-Plug 'voldikss/vim-floaterm'
+Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] } "Find and replace through multiple files
+"Plug 'ZSaberLv0/vim-easygrep'
+"Plug 'dkprice/vim-easygrep'
 
 " Taglist 显示函数列表
 "Plug 'liuchengxu/vista.vim'
@@ -661,9 +667,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-
-" Find & Replace
-Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] } "Find and replace through multiple files
 
 " Undo Tree 在文件修改的历史版本中切换
 Plug 'mbbill/undotree'
@@ -717,8 +720,12 @@ Plug 'vim-pandoc/vim-pandoc-syntax', { 'for': ['vimwiki', 'markdown', 'pandoc', 
 Plug 'scrooloose/vim-slumlord', { 'for': ['uml', 'plantuml'] } "live preview of plantuml
 Plug 'aklt/plantuml-syntax', { 'for': ['uml', 'plantuml'] }
 
-" Other useful utilities
+" Task manager
 "Plug 'blindFS/vim-taskwarrior'
+"Plug 'tbabej/taskwiki'
+
+" Other useful utilities
+Plug 'voldikss/vim-floaterm'
 "Plug 'linuxcaffe/tw-airline-plugin'
 Plug 'tpope/vim-speeddating' "make <C-a> & <C-x> works for date format
 Plug 'tpope/vim-repeat' "enhance . operation
