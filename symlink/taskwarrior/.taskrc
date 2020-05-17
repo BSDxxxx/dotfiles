@@ -76,6 +76,7 @@ urgency.blocked.coefficient        = -5.0 # blocked by other tasks
 
 # UDA urgency coefficient
 urgency.uda.tags.高数.coefficient = 2
+urgency.uda.tags.线代.coefficient = 2
 urgency.uda.tags.政治.coefficient = 1
 urgency.uda.project.筑基.coefficient = 4
 
