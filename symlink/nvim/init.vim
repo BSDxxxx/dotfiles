@@ -42,6 +42,7 @@ endif
 set nocompatible "这要放在前面,不然有些配置不会生效,如showcmd
 let &t_ut='' "Prevent incorrect backgroung rendering
 set clipboard^=unnamed,unnamedplus "与系统剪贴板关联
+set timeoutlen=500 "按键等待延迟
 
 "exec 'silent !mkdir -p '.g:location_prefix.'/nvim/tmp/sessions'
 " Set backup directory
@@ -126,8 +127,14 @@ aug END
 " =======================
 " === Edirot behavior ===
 " =======================
-set relativenumber "相对行号
+" 自动切换行号
+set relativenumber number "混合行号
 "noremap <F2> :set rnu!<CR>
+augroup numbertoggle
+	autocmd!
+	autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+	autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+augroup END
 
 " 自动注释、缩进，会导致i模式下ctrl键无效，而且会导致一些插件无法正常工作
 "set paste
@@ -371,7 +378,8 @@ set inccommand=split "即时预览命令效果，目前只支持:s替换
 set shortmess+=c
 
 " find and replace
-nnoremap \s :%s//g<left><left>
+nnoremap \s :%s///g<left><left>
+xnoremap \s :s///g<left><left>
 
 
 " =============
@@ -634,13 +642,15 @@ endif
 "Plug 'ZSaberLv0/ZFVimJob' "optional, for async db update
 "Plug 'ZSaberLv0/ZFVimGitUtil' "optional, see `g:ZFVimIM_cloudAsync_autoCleanup`
 
-" File navigation
+" File tree
 Plug 'jistr/vim-nerdtree-tabs', { 'on': 'NERDTreeTabsToggle' } "在tab中同步nerdtree状态
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeTabsToggle' }
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeTabsToggle' } "nerdtree识别git状态
 Plug 'ZSaberLv0/nerdtree_menu_util', { 'on': 'NERDTreeTabsToggle' } "add useful item to nerdtree menu
 Plug 'ryanoasis/vim-devicons' "Add file type icons to Vim plugins such as: NERTTree, airline, startify...
-"Plug 'Yggdroot/LeaderF', {'do': '.\install.bat' } "Error on windows
+"Plug 'justinmk/vim-dirvish'
+"Plug 'bounceme/remote-viewer' "Browse ssh:// and other remote paths with vim-dirvish
+"Plug 'kristijanhusak/vim-dirvish-git' "Show git status of each file with vim-dirvish
 
 " Find & Replace
 if isdirectory('/usr/local/opt/fzf')
@@ -651,6 +661,7 @@ endif
 Plug 'junegunn/fzf.vim'
 "Plug 'yuki-ycino/fzf-preview.vim' "Error on windows, using floaterm instead
 "Plug 'fszymanski/fzf-gitignore', { 'do': ':UpdateRemotePlugins' } "create gitignore file(use coc-gitignore instead)
+"Plug 'Yggdroot/LeaderF', {'do': '.\install.bat' } "Error on windows
 Plug 'brooth/far.vim', { 'on': ['F', 'Far', 'Fardo'] } "Find and replace through multiple files
 "Plug 'ZSaberLv0/vim-easygrep'
 "Plug 'dkprice/vim-easygrep'
@@ -701,7 +712,6 @@ Plug 'gko/vim-coloresque', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'c
 
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['vimwiki', 'markdown', 'pandoc', 'diary', 'vim-plug'] }
-"Plug 'suan/vim-instant-markdown' "Another markdown preview
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' } "快速制表
 "Plug 'masukomi/vim-markdown-folding' "Fold markdown documents by section. Notice:vimwiki already have md folding function.
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
