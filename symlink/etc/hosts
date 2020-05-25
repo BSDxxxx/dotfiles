@@ -1,10 +1,9 @@
 # hosts -> dnsmaq: %s/\v^(#*\s*)(\S+)\s+(\S+)\s*/\1address=\/\3\/\2/g
 # dnsmap -> hosts: %s/\vaddress\=\/(\S+)\/(\S+)\s*/\2 \1/g
 
-#127.0.0.1 bilibili.com
-#127.0.0.1 www.bilibili.com
-#127.0.0.1 pianku.com
-#127.0.0.1 www.pianku.com
+127.0.0.1 bilibili.com
+127.0.0.1 youtube.com
+127.0.0.1 pianku.com
 104.18.18.18 free-ss.site
 
 # Anki º”ÀŸ
@@ -35,7 +34,7 @@
 127.0.0.1 pagead2.googlesyndication.com
 127.0.0.1 pagead2.googleadservices.com
 127.0.0.1 tpc.googlesyndication.com
-127.0.0.1 www.gstatic.com
+#127.0.0.1 www.gstatic.com
 127.0.0.1 imasdk.googleapis.com
 #127.0.0.1 www.google-analytics.com
 #127.0.0.1 google-analytics.com
