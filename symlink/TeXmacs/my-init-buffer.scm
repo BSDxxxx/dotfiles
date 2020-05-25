@@ -1,9 +1,19 @@
+;────────────────────────────────────────────;
+; Plugin ;
+;────────────────────────────────────────────;
+(use-modules (convert markdown init-markdown))
+
+
+;────────────────────────────────────────────;
+; Keyboard shortcuts valid all mode ;
+;────────────────────────────────────────────;
 (kbd-map
   ("s h return" (make 'shell-code))
   ("c p p return" (make 'cpp-code))
   ("p y return" (make 'python-code))
   ("p y tab" (make-session "scheme" "defaule"))
-  ("M-p" (clipboard-paste-import "verbatim" "primary")))
+  ("C-C" (clipboard-copy-export "verbatim" "primary"))  ;;Ctrl-Shift-c
+  ("C-V" (clipboard-paste-import "verbatim" "primary")))  ;;Ctrl-Shift-v
 
 
 ;────────────────────────────────────────────;
@@ -28,7 +38,6 @@
   ("d i v ."   (insert "<nabla><cdot>"))
   ("r o t ."   (insert "<nabla><times>"))
   ("C-1" (numbered-toggle (focus-tree))))
-
 
 
 ;───────────────────────;
