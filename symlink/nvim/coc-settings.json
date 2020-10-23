@@ -1,4 +1,16 @@
 {
 	"pairs.disableLanguages": [],
-	"pairs.enableCharacters": ["(", "[", "{", "<", "'", "\"", "`", "《", "「"],
+	"pairs.enableCharacters": [
+	"(",
+	"[",
+	"{",
+	"<",
+	"'",
+	"\"",
+	"`",
+	"《",
+	"「"
+	],
+	"clangd.path": "C:\\Users\\zyx\\AppData\\Local\\coc\\extensions\\coc-clangd-data\\install\\10.0.0\\clangd_10.0.0\\bin\\clangd.exe",
+	"coc.preferences.formatOnSaveFiletypes": ["c", "cpp"]
 }

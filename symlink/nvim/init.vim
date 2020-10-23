@@ -212,6 +212,7 @@ filetype indent on
 filetype plugin on
 filetype plugin indent on
 
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set encoding=utf-8
 
 set ttyfast "should make scrolling faster
@@ -393,10 +394,10 @@ nnoremap <silent> sk :set nosplitbelow<CR>:split<CR>
 nnoremap <silent> sj :set splitbelow<CR>:split<CR>
 
 " Jump, <C-w><C-w>
-nnoremap <C-h> <C-w>h
-nnoremap <C-l> <C-w>l
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
+"nnoremap <C-h> <C-w>h
+"nnoremap <C-l> <C-w>l
+"nnoremap <C-j> <C-w>j
+"nnoremap <C-k> <C-w>k
 
 " Resize, <C-w>= resize to average
 nnoremap <silent> <Up> :res +5<CR>
@@ -404,7 +405,7 @@ nnoremap <silent> <Down> :res -5<CR>
 nnoremap <silent> <Left> :vertical resize-5<CR>
 nnoremap <silent> <Right> :vertical resize+5<CR>
 
-" Vertical and horizen
+" Switch vertical and horizen
 noremap sv <C-w>t<C-w>H
 noremap sr <C-w>t<C-w>K
 
@@ -420,9 +421,9 @@ nnoremap <silent> <C-t>l :+tabnext<CR>
 " =====================
 " === Fold Settings ===
 " =====================
-"set foldenable              " 开始折叠
+set nofoldenable            " 打开文件时不自动折叠
 "set foldmethod=syntax       " 设置语法折叠
-"set foldmethod=indent       " 设置缩进折叠
+autocmd FileType c setlocal foldmethod=indent       " 设置缩进折叠
 "set foldcolumn=0            " 在屏幕左侧显示折叠状态条
 "set foldlevel=99
 "setlocal foldlevel=1        " 设置折叠层数为
@@ -487,12 +488,14 @@ inoremap <silent> ,,  <++>
 inoremap <silent> ,f <Esc>/<++><CR>:nohlsearch<CR>"_c4l
 nnoremap <silent> ,f /<++><CR>:nohlsearch<CR>"_c4l
 "nnoremap <silent> ,<LEADER> a<SPACE><ESC>
+inoremap <silent> <S-CR> <Esc>o
+
 autocmd Filetype markdown inoremap <buffer> <silent> ,w <Esc>/ <++><CR>:nohlsearch<CR>"_c5l<CR>
 autocmd Filetype markdown inoremap <buffer> <silent> ,- ---<Enter><Enter>
-autocmd Filetype markdown inoremap <buffer> <silent> ,b **** <++><Esc>F*hi
-autocmd Filetype markdown xnoremap <buffer> <silent> ,b A**<Esc>gvI**<Esc>
-autocmd Filetype markdown inoremap <buffer> <silent> ,s ~~~~ <++><Esc>F~hi
-autocmd Filetype markdown xnoremap <buffer> <silent> ,s A~~<Esc>gvI~~<Esc>
+autocmd Filetype markdown inoremap <buffer> <silent> ,b  **** <++><Esc>F*hi
+autocmd Filetype markdown xnoremap <buffer> <silent> ,b A** <Esc>gvI **<Esc>
+autocmd Filetype markdown inoremap <buffer> <silent> ,s  ~~~~ <++><Esc>F~hi
+autocmd Filetype markdown xnoremap <buffer> <silent> ,s A ~~<Esc>gvI ~~<Esc>
 autocmd Filetype markdown inoremap <buffer> <silent> ,u <u></u><++><Esc>F/hi
 autocmd Filetype markdown inoremap <buffer> <silent> ,i ** <++><Esc>F*i
 autocmd Filetype markdown xnoremap <buffer> <silent> ,i A*<Esc>gvI*<Esc>
@@ -583,18 +586,21 @@ autocmd BufEnter * silent! lcd %:p:h
 set autochdir "执行命令时默认在当前目录
 
 " Compile function,根据不同文件类型执行不同的指令
-noremap <LEADER>rr :call CompileRunGcc()<CR>
+noremap <silent> <LEADER>rr :call CompileRunGcc()<CR>
 func! CompileRunGcc()
-	exec 'w'
+	exec 'silent w'
 	if &filetype == 'c'
-		exec '!g++ % -o %<'
-		exec '!time ./%<'
+		exec '!gcc -g % -o C:/Windows/Temp/%<.out'
+		exec '!C:/Windows/Temp/%<.out'
+		"exec '!gcc % -o C:\Windows\Temp\a.out'
+		"exec '!C:\Windows\Temp\a.out'
 	elseif &filetype == 'cpp'
 		set splitbelow
-		exec '!g++ -std=c++11 % -Wall -o %<'
-		:sp
-		:res -15
-		:term ./%<
+		exec '!g++ -g -std=c++11 % -Wall -o %<'
+		exec '!%<.exe'
+		":sp
+		":res -15
+		":term ./%<
 	elseif &filetype == 'java'
 		exec '!javac %'
 		exec '!time java %<'
@@ -703,16 +709,22 @@ Plug 'puremourning/vimspector', {'do': './install_gadget.py --enable-c --enable-
 "Plug 'elzr/vim-json'
 "Plug 'hail2u/vim-css3-syntax'
 "Plug 'spf13/PIV', { 'for' :['php', 'vim-plug'] }
-Plug 'gko/vim-coloresque', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less', 'vim'] } "color instant preview
+Plug 'gko/vim-coloresque', { 'for': ['vim-plug', 'php', 'html', 'javascript', 'css', 'less', 'vim', 'c'] } "color instant preview
 "Plug 'pangloss/vim-javascript', { 'for' :['javascript', 'vim-plug'] }
 "Plug 'mattn/emmet-vim'
 
 " Python
 "Plug 'vim-scripts/indentpython.vim'
 
+" C/C++
+Plug 'vim-scripts/c.vim', { 'for': ['c', 'cpp'] }
+"Plug 'dense-analysis/ale' "syntax check
+
+
 " Markdown
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install_sync() }, 'for' :['vimwiki', 'markdown', 'pandoc', 'diary', 'vim-plug'] }
 Plug 'dhruvasagar/vim-table-mode', { 'on': 'TableModeToggle' } "快速制表
+Plug 'retorillo/airline-tablemode.vim', {'on': 'TableModeToggle'} "状态栏显示制表状态
 "Plug 'masukomi/vim-markdown-folding' "Fold markdown documents by section. Notice:vimwiki already have md folding function.
 Plug 'mzlogin/vim-markdown-toc', { 'for': ['gitignore', 'markdown'] }
 Plug 'vimwiki/vimwiki', {'branch': 'dev'} "wiki 格式的目录管理
@@ -742,7 +754,8 @@ Plug 'tpope/vim-repeat' "enhance . operation
 Plug 'easymotion/vim-easymotion' "光标快速定位、跳转
 Plug 'ZSaberLv0/vim-easymotion-chs' "allow easymotion recognize Chinese with English words
 Plug 'skywind3000/vim-quickui' "popup menu
-Plug 'terryma/vim-multiple-cursors' "<C-n>选中相同文本进入多行光标模式
+"Plug 'terryma/vim-multiple-cursors' "<C-n>选中相同文本进入多行光标模式，coc.nvim有类似功能
+Plug 'mg979/vim-visual-multi', {'branch': 'master'} "功能比vim-multiple-cursors多，速度也更快
 Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction free writing mode(fouce mode)
 Plug 'tpope/vim-surround' " 包裹字符或解包
 "Plug 'Raimondi/delimitMate' "括号自动补全（using coc-pairs instead）
@@ -756,6 +769,7 @@ Plug 'inkarkat/vim-EnhancedJumps' "增强<c-o> <c-i>的跳转功能，配合g可
 Plug 'junegunn/vim-peekaboo' "yank preview
 Plug 'kshenoy/vim-signature' "take over default mark: mark preview, multiple marks (<=2), custom mark signs, highlight sign
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } } "Enable neovim in browser
+Plug 'AndrewRadev/switch.vim' "quick switch among predefind symbols
 
 " Dependencies
 Plug 'inkarkat/vim-ingo-library'
@@ -807,12 +821,12 @@ let g:gruvbox_invert_indent_guides = '0'
 " ==============
 " === Neuims ===
 " ==============
-"if has('win32')
-	""Auto switch to ENG (win10) when start a buffer
-	"autocmd VimEnter * call neuims#Toggle()
-	"autocmd VimEnter * call neuims#Switch(1)
-	"autocmd VimEnter * call neuims#Switch(0)
-"endif
+if has('win32')
+	"Auto switch to ENG (win10) when start a buffer
+	autocmd VimEnter * call neuims#Toggle()
+	autocmd VimEnter * call neuims#Switch(1)
+	autocmd VimEnter * call neuims#Switch(0)
+endif
 
 
 " ===============
@@ -1103,7 +1117,11 @@ hi FloatermBorderNF guifg=salmon
 " ===========
 " === COC ===
 " ===========
-let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-yank', 'coc-gitignore', 'coc-vimlsp', 'coc-tailwindcss', 'coc-stylelint', 'coc-tslint', 'coc-lists', 'coc-explorer', 'coc-pyright', 'coc-sourcekit', 'coc-translator', 'coc-flutter', 'coc-markmap', 'coc-pairs']
+let g:coc_global_extensions = ['coc-python', 'coc-vimlsp', 'coc-html', 'coc-json', 'coc-css', 'coc-tsserver', 'coc-yank', 'coc-gitignore', 'coc-vimlsp', 'coc-tailwindcss', 'coc-stylelint', 'coc-tslint', 'coc-lists', 'coc-explorer', 'coc-pyright', 'coc-sourcekit', 'coc-translator', 'coc-markmap', 'coc-pairs', 'coc-clangd']
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
 
 " Add (Neo)Vim's native statusline support. NOTE: Please see `:h coc-status` for integrations with external plugins that provide custom statusline: lightline.vim, vim-airline.
 "set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
@@ -1162,6 +1180,9 @@ command! -range=% Markmap :call CocAction('activeExtension', 'coc-markmap') | Co
 autocmd FileType vim let b:coc_pairs_disabled = ['"']
 "formatOnType: insert empty line when <CR>
 inoremap <silent><expr> <cr> "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" multiple cursor
+nmap <silent> <C-d> <Plug>(coc-cursors-word)
 
 
 " =================
@@ -1303,7 +1324,7 @@ let g:vimwiki_hl_headers                               = 1
 let g:vimwiki_hl_cb_checked                            = 2
 au BufEnter *.wiki :syntax sync fromstart
 let g:vimwiki_ext2syntax                               = {'.md': 'markdown', '.markdown': 'markdown'}
-let g:vimwiki_markdown_link_ext                        = 1 "append file ext when creating a link
+"let g:vimwiki_markdown_link_ext                        = 1 "append file ext when creating a link
 let g:vimwiki_filetypes                                = ['markdown', 'pandoc'] "set filetype vimwiki to vimwiki.markdown.pandoc
 "autocmd Filetype vimwiki.markdown.pandoc set filetype = markdown.vimwiki.pandoc
 let g:vimwiki_global_ext                               = 0 "change filetype globally or just in work path
@@ -1781,6 +1802,16 @@ let g:firenvim_config = {
 		\ },
 	\ }
 \ }
+
+" ==================
+" === switch.vim ===
+" ==================
+"let g:switch_mapping = '-'
+let g:switch_custom_definitions =
+	\ [
+	\   ['+', '-', '*', '/'],
+	\   ['<', '>']
+	\ ]
 
 
 " ===================== End of Plugin Settings =====================
