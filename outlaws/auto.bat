@@ -1,5 +1,6 @@
 doskey ls=dir /b $*
 doskey ll=dir $*
+doskey rm=del $*
 doskey vi=nvim-qt --no-ext-popupmenu --no-ext-tabline $*
 doskey ..=cd ..
 doskey ~=cd C:\Users\zyx
