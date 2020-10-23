@@ -98,6 +98,9 @@ v0.12
 v1.0
  Compatibility with KeePass 2.42. For versions of KeePass prior to 2.42, use an 0.X version.
 
+v1.1
+ Added Auto Type Password action (thanks to Chen Zhenge for contribution)
+
 Attributions
 ------------
 Throbber image by FlipDarius http://www.mediawiki.org/wiki/File:Loading.gif
