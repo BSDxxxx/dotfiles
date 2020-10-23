@@ -18,9 +18,9 @@ map('gdT', 'gxT');//关闭右侧标签页
 map('gd0', 'gx0');//关闭左侧所有标签页
 map('gd$', 'gx$');//关闭右侧所有标签页
 map('gdd', 'gxx');//关闭当前标签页之外的所有标签页
-map('u', 'X');//恢复刚关闭的标签页
 map('<Ctrl-i>', 'g0');//第一个标签页
 map('<Ctrl-a>', 'g$');//最后一个标签页
+map('u', 'X');//恢复刚关闭的标签页
 map('p', 'cc')//打开剪贴板中的url
 
 
@@ -77,6 +77,16 @@ addSearchAliasX('v', 'v2ex', 'https://www.sov2ex.com/?q=', 's', 'https://duckduc
 });
 mapkey('ov', '#8打开v2ex搜索栏', function() {
     Front.openOmnibar({type: "SearchEngine", extra: "v"});
+});
+
+addSearchAliasX('t', '淘宝', 'https://s.taobao.com/search?q=', 's', 'https://duckduckgo.com/ac/?q=', function(response) {
+    var res = JSON.parse(response.text);
+    return res.map(function(r){
+        return r.phrase;
+    });
+});
+mapkey('ot', '#8打开淘宝搜索栏', function() {
+    Front.openOmnibar({type: "SearchEngine", extra: "t"});
 });
 
 
